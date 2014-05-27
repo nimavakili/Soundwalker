@@ -320,15 +320,21 @@ public class GPSService extends Service implements LocationListener {
 		int fileCount = allFiles.length;
 		node = new NodeManager[fileCount];
 		nodeCount = 0;
+		int error = 0;
 		for (int i = 0; i < fileCount; i++) {
 			if (allFiles[i].endsWith(".mp3")) {
 				node[nodeCount] = new NodeManager(this, allFiles[i]);
+				if (node[nodeCount].invalid)
+					error++;
 				nodeCount++;
 			}
 		}
-		sendMessage(messageAll, nodeCount);
+		sendMessage(messageAll, nodeCount - error);
 		if (nodeCount == 0) {
 			Toast.makeText(getApplicationContext(), getResources().getString(R.string.no_mp3), Toast.LENGTH_LONG).show();
+		}
+		else if (error > 0) {
+			Toast.makeText(getApplicationContext(), getResources().getString(R.string.invalid_format), Toast.LENGTH_LONG).show();
 		}
 	}
 	
@@ -370,21 +376,26 @@ public class GPSService extends Service implements LocationListener {
 		//sendDouble(messageAlt, dist);
 
 		int activeRegions = 0;
+		int error = 0;
 		if (isTracking) {
 			for (int i = 0; i < nodeCount; i++) {
-				if (node[i].isInside(lat, lon)) {
-					activeRegions++;
-					if (hasAudioFocus) {
-						if (!node[i].isPlaying()) {
-							node[i].play();
+				if (!node[i].invalid) {
+					if (node[i].isInside(lat, lon)) {
+						activeRegions++;
+						if (hasAudioFocus) {
+							if (!node[i].isPlaying()) {
+								node[i].play();
+							}
+							node[i].setVolume(lat, lon);
 						}
-						node[i].setVolume(lat, lon);
+					}
+					else {
+						if (node[i].isPlaying())
+							node[i].stop();
 					}
 				}
-				else {
-					if (node[i].isPlaying())
-						node[i].stop();
-				}
+				else
+					error++;
 			}
 			if (activeRegions > 0 && !hasAudioFocus) {
 				int result = audioManager.requestAudioFocus(onAudioFocusChange, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN);
@@ -401,7 +412,7 @@ public class GPSService extends Service implements LocationListener {
 			}
 		}
 		sendMessage(messageAct, activeRegions);
-		sendMessage(messageAll, nodeCount);
+		sendMessage(messageAll, nodeCount - error);
 
 		/*if (isTracking) {
 			String path = lastLocation;
@@ -642,8 +653,10 @@ public class GPSService extends Service implements LocationListener {
 		audioManager.abandonAudioFocus(onAudioFocusChange);
 		hasAudioFocus = false;
 		for (int i = 0; i < nodeCount; i++) {
-			if (node[i].isPlaying()) {
-				node[i].stop();
+			if (!node[i].invalid) {
+				if (node[i].isPlaying()) {
+					node[i].stop();
+				}
 			}
 		}
 	}

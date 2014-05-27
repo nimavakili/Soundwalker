@@ -1,17 +1,14 @@
 package com.minimv.soundwalker;
 
 import java.io.IOException;
-
-import com.minimv.soundwalker.R;
-
+//import com.minimv.soundwalker.R;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.location.Location;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-//import android.os.Environment;
 import android.util.Log;
-import android.widget.Toast;
+//import android.widget.Toast;
 
 public class NodeManager {
 
@@ -24,6 +21,7 @@ public class NodeManager {
 	private double radI = 0;
 	private static SharedPreferences lastPositions;
 	private static SharedPreferences.Editor positionEditor;
+	public boolean invalid = false;
 	
 	public NodeManager(Context context, String p) {
 // TODO: Error handling
@@ -38,21 +36,20 @@ public class NodeManager {
 				radI = 0;
 			}
 			else {
-				radI = Math.min(Double.parseDouble(split[2].trim()), Double.parseDouble(split[3].trim()));
-				radO = Math.max(Double.parseDouble(split[2].trim()), Double.parseDouble(split[3].trim()));
-				if (radO == radI)
-					radI = 0;
+				radI = Math.min(Math.abs(Double.parseDouble(split[2].trim())), Math.abs(Double.parseDouble(split[3].trim())));
+				radO = Math.max(Math.abs(Double.parseDouble(split[2].trim())), Math.abs(Double.parseDouble(split[3].trim())));
 			}
 			Log.v("FILES", "Lat: " + lat + ", Lon: " + lon + ", RadO: " + radO + ", RadI: " + radI);
 			lastPositions = mContext.getSharedPreferences("LAST_POSITIONS", 0);
 			positionEditor = lastPositions.edit();
 		}
 		catch (Exception e) {
-			Toast.makeText(context.getApplicationContext(), "Invalid MP3 name format:\n" + p + context.getResources().getString(R.string.invalid_format), Toast.LENGTH_LONG).show();
+			invalid = true;
+			//Toast.makeText(context.getApplicationContext(), "Invalid MP3 name format:\n" + p + context.getResources().getString(R.string.invalid_format), Toast.LENGTH_LONG).show();
 			e.printStackTrace();
 		}
 	}
-	
+		
 	public double getLat() {
 		return lat;
 	}
@@ -161,7 +158,11 @@ public class NodeManager {
 	public float setVolume(double lat, double lon) {
 		int maxVolume = 100;
 		double dist = distanceTo(lat, lon);
-		float vol = (float)Math.max(((dist - radI)/(radO - radI))*maxVolume, 0);
+		float vol;
+		if (radO == radI)
+			vol = maxVolume;
+		else
+			vol = (float)Math.max(((dist - radI)/(radO - radI))*maxVolume, 0);
 		float logVol = 1 - (float)(Math.log(vol)/Math.log(maxVolume));
 		mPlayer.setVolume(logVol, logVol);
 		return vol;
