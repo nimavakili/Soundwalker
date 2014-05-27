@@ -1,0 +1,39 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- item
+        android:id="@+id/menu_help"
+        android:title="@string/menu_help"
+	    android:icon="@android:drawable/ic_menu_help"
+        android:onClick="onHelp" /-->
+
+    <item
+        android:id="@+id/menu_debug"
+        android:title="@string/menu_debug"
+        android:checkable="true"
+        android:checked="false"
+        android:onClick="onDebug" />
+
+    <item
+        android:id="@+id/menu_reset"
+        android:title="@string/menu_reset"
+        android:onClick="onReset" />
+
+    <!-- item
+        android:id="@+id/menu_about"
+        android:title="@string/menu_about"
+	    android:icon="@android:drawable/ic_menu_info_details"
+        android:onClick="onAbout" /-->
+
+    <item
+        android:id="@+id/menu_version"
+        android:title="@string/version"
+	    android:showAsAction="always"
+        android:enabled="false" />
+
+    <!-- item
+        android:id="@+id/menu_delete"
+        android:title="@string/menu_delete"
+	    android:icon="@android:drawable/ic_menu_delete"
+        android:onClick="onDelete" /-->
+
+</menu>

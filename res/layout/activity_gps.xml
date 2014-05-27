@@ -1,0 +1,316 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".GPSActivity"
+    tools:ignore="ContentDescription" >
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/app_name"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textColor="@color/black"
+        android:textSize="@dimen/title_size" />
+    
+    <TextView
+        android:id="@+id/searching"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@android:drawable/toast_frame"
+        android:gravity="center"
+        android:shadowColor="#BB000000"
+        android:shadowRadius="2.75"
+        android:text="@string/searching"
+        android:textAppearance="@android:style/TextAppearance.Small"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/lattitude_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="100dp"
+        android:text="Lattitude:"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textColor="@color/black"
+        android:textSize="@dimen/label_size" />
+    
+    <TextView
+        android:id="@+id/lattitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="120dp"
+        android:layout_alignBaseline="@id/lattitude_text"
+        android:text="---"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textSize="@dimen/label_size"
+        android:textColor="@color/black" />
+    
+    <TextView
+        android:id="@+id/longitude_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="125dp"
+        android:text="Longitude:"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textSize="@dimen/label_size"
+        android:textColor="@color/black" />
+    
+    <TextView
+        android:id="@+id/longitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="120dp"
+        android:layout_alignBaseline="@id/longitude_text"
+        android:text="---"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textSize="@dimen/label_size"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/accuracy_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="150dp"
+        android:text="Accuracy:"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textSize="@dimen/label_size"
+        android:textColor="@color/black" />
+    
+    <TextView
+        android:id="@+id/accuracy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="120dp"
+        android:layout_alignBaseline="@id/accuracy_text"
+        android:text="---"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textSize="@dimen/label_size"
+        android:textColor="@color/black" />
+    
+    <TextView
+        android:id="@+id/all_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="150dp"
+        android:text="All Regions:"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textSize="@dimen/label_size"
+        android:textColor="@color/black" />
+    
+    <TextView
+        android:id="@+id/all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="150dp"
+        android:layout_alignBaseline="@id/all_text"
+        android:text="---"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textSize="@dimen/label_size"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/active_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="120dp"
+        android:text="Active Regions:"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textSize="@dimen/label_size"
+        android:textColor="@color/black" />
+    
+    <TextView
+        android:id="@+id/active"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="155dp"
+        android:layout_alignBaseline="@id/active_text"
+        android:text="---"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textSize="@dimen/label_size"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/trackingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:text="@string/start_tracking"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="@dimen/label_size"
+        android:visibility="gone" />
+
+    <ToggleButton
+        android:id="@+id/trackingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:minHeight="56dp"
+        android:minWidth="128dp"
+        android:onClick="onTrackingToggled"
+        android:text="@string/start_tracking"
+        android:textOff="@string/start_tracking"
+        android:textOn="@string/stop_tracking"
+        android:textSize="@dimen/btn_size" />
+    
+	<RelativeLayout
+	    android:id="@+id/aboutFrame"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:background="@color/white"
+	    android:visibility="invisible" >
+	    
+	    <ScrollView
+	        android:id="@+id/SCROLLER_ID1"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginBottom="84dp"
+	        android:layout_marginTop="60dp"
+	        android:fillViewport="true"
+	        android:paddingLeft="30dp"
+	        android:paddingRight="30dp"
+	        android:scrollbarAlwaysDrawVerticalTrack="true"
+			android:fadeScrollbars="false"
+	        android:scrollbarStyle="outsideOverlay"
+	        android:scrollbars="vertical" >
+	        
+		    <TextView
+		        android:id="@+id/about"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+		        android:autoLink="web"
+		        android:text="@string/about"
+		        android:textAppearance="?android:attr/textAppearanceMedium"
+		        android:textSize="@dimen/label_size_about" />
+	
+		</ScrollView>
+
+	    <TextView
+	        android:id="@+id/aboutTitle"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_alignParentLeft="true"
+	        android:layout_marginLeft="30dp"
+	        android:layout_marginTop="20dp"
+	        android:text="@string/menu_about"
+	        android:textAppearance="?android:attr/textAppearanceMedium"
+	        android:textSize="@dimen/title_size_about" />
+
+	    <TextView
+	        android:id="@+id/version"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@id/aboutTitle"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginRight="30dp"
+	        android:text="@string/version"
+	        android:textAppearance="?android:attr/textAppearanceMedium"
+	        android:textColor="@color/gray"
+	        android:textSize="@dimen/label_size_about" />
+	    
+	</RelativeLayout>
+	
+	<!-- RelativeLayout
+	    android:id="@+id/helpFrame"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:background="@color/white"
+	    android:visibility="invisible" >
+	    
+	    <ScrollView
+	        android:id="@+id/SCROLLER_ID2"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginBottom="84dp"
+	        android:layout_marginTop="60dp"
+	        android:fillViewport="true"
+	        android:paddingLeft="30dp"
+	        android:paddingRight="30dp"
+	        android:scrollbarAlwaysDrawVerticalTrack="true"
+			android:fadeScrollbars="false"
+	        android:scrollbarStyle="outsideOverlay"
+	        android:scrollbars="vertical" >
+	        
+	        <TextView
+	            android:id="@+id/help"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="@string/help"
+	            android:textAppearance="?android:attr/textAppearanceMedium"
+	            android:textSize="@dimen/label_size" />
+	
+		</ScrollView>
+        
+	    <TextView
+	        android:id="@+id/helpTitle"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_alignParentLeft="true"
+	        android:layout_marginLeft="30dp"
+	        android:layout_marginTop="20dp"
+	        android:text="@string/menu_help"
+	        android:textAppearance="?android:attr/textAppearanceMedium"
+	        android:textSize="@dimen/title_size" />
+
+	</RelativeLayout-->
+		
+	<Button
+	    android:id="@+id/backButton"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginBottom="20dp"
+	    android:onClick="onReturn"
+	    android:text="@string/back_button"
+	    android:textSize="@dimen/btn_size"
+	    android:visibility="invisible" />
+
+	<ProgressBar
+	    android:id="@+id/spinner"
+	    style="?android:attr/progressBarStyleLarge"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerInParent="true"
+	    android:indeterminateBehavior="cycle"
+	    android:visibility="gone" />
+	
+</RelativeLayout>

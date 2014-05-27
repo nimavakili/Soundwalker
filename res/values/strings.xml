@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name"><b>Soundwalker</b></string>
+    <!-- string name="hello_world">Hello World!</string -->
+    <string name="menu_debug">Debug</string>
+    <string name="menu_about">About</string>
+    <string name="menu_reset">Reset</string>
+    <string name="menu_delete">Supprimer les données sauvegardées</string>
+    <string name="menu_help">Aide</string>
+    <string name="stop_recording">Arrêter l\'enregistrement</string>
+    <string name="start_recording">Planter une graine</string>
+    <string name="start_tracking">Start Tracking</string>
+    <string name="stop_tracking">Stop Tracking</string>
+    <string name="upload_button">Upload Files</string>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#bfbfbf</color>
+    <!-- color name="semi_white">#7FFFFFFF</color -->
+    <string name="go_button">Go!</string>
+    <string name="save_button">Envoyer</string>
+    <string name="back_button">Back</string>
+    <string name="play_button">Écouter</string>
+    <string name="stop_button">Arrêter</string>
+    <string name="go_text"><b>How treelike we are,\nHow human the tree</b>\n\nGretel Ehrlich, \"River History\", 1998</string>
+    <string name="version">v1.0b</string>
+    <string name="outide_map">L\'enregistrement est uniquement possible dans la ville de Montpellier.</string>
+    <string name="searching">Acquiring GPS Lock...</string>
+    <string name="gps_disabled">GPS Receiver Disabled</string>
+    <!-- string name="test">http://minim-v.com/grimpant/A000002A64C317/40.50689578,-74.47057746,20130615163348.mp3</string -->
+    <!-- string name="nomap_text">No Map Available  No Map Available  No Map Available\n\nNo Map Available  No Map Available  No Map Available\n\nNo Map Available  No Map Available  No Map Available\n\nNo Map Available  No Map Available  No Map Available\n\nNo Map Available  No Map Available  No Map Available\n\nNo Map Available  No Map Available  No Map Available\n\nNo Map Available  No Map Available  No Map Available\n\nNo Map Available  No Map Available  No Map Available</string -->
+    
+    
+    <string name="gps_disabled_prompt">Your GPS receiver is disabled! Would you like to enable it?</string>
+    <string name="enable_gps">Enable GPS</string>
+    <string name="do_nothing">Do Nothing</string>
+    <string name="unsent_both">Grimpant a %1$d parcours et %2$d enregistrement(s) qui n\'ont pas été envoyés. Envoyer maintenant ?</string>
+    <string name="unsent_track">Grimpant n\'a pas pu envoyer %1$d parcours. Envoyer maintenant ?</string>
+    <string name="unsent_audio">Grimpant n\'a pas pu envoyer %1$d enregistrement(s). Envoyer maintenant ?</string>
+    <string name="ok">OK</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+	<string name="upload_recording">Voulez-vous sauvegarder/envoyer cet enregistrement ?</string>
+	<string name="upload_track">Voulez-vous sauvegarder/envoyer ce parcours ?</string>
+	<string name="need_lock"> L\'enregistrement nécessite un signal GPS stable.</string>
+	<string name="wait_lock">S\'il vous plaît, patientez jusqu\'à ce que Grimpant obtienne un signal GPS stable.</string>
+    <string name="unsent_notif">Grimpant a des parcours/enregistrements qui n\'ont pas été envoyés.</string>
+    <string name="delete_notif">Êtes-vous sûr de vouloir supprimer tous les fichiers sauvegardés ?</string>
+    <string name="detail_notif">Sélectionnez pour consulter les détails.</string>
+    <string name="upload_notif">Grimpant téléchargement</string>
+    <string name="uploading">Envoi</string>
+    <string name="track">du parcours</string>
+    <string name="audio">de l\'enregistrement audio</string>
+    <string name="uploading_finished">terminé</string>
+    <string name="uploading_error">Erreur lors de l\'envoi</string>
+    <string name="uploading_unsent">des parcours/enregistrement(s)</string>
+    <string name="is_tracking">Soundwalker is tracking</string>
+    <string name="no_lock">No GPS Lock</string>
+    <string name="lock">GPS Lock</string>
+	<string name="no_internet">Pas d\'accès internet !</string>
+	<string name="no_sd">No SD card!</string>    	
+	<string name="no_folder">Could not find the Soundwalker folder on the SD card!</string>    	
+	<string name="no_mp3">Could not find any MP3 files in the Soundwalker folder!</string>    	
+	<string name="invalid_format">\n\nCorrect: latitude,longitude,radius.mp3\n\nExample: 42.90895,-78.87955,0.00048.mp3</string>    	
+		
+    
+    <string name="about"><b>Other Order (2014)\nTeri Rueb</b>\n\n"Other Order" is a sound walk set in the abandoned ruderal landscape of Bussey Brook Meadow. Where the formal gardens of the Arboretum present visitors with carefully arranged and maintained specimens organized according to formal systems of botanical classification, Bussey Brook Meadow is a less easily categorized “emergent” ecology – an urban wild that has evolved through informal processes of management that have left it open to colonization by spontaneous vegetation, and the ever-shifting impacts of human interventions.\n\nResilience is the hallmark of such emergent ecologies, as illuminated by the voice of retired Senior Research Scientist, Peter Del Tredici, as heaccompanies a variety of guest visitors on walks through the meadow.\n\nThe tracts that make up the contemporary Bussey Brook Meadow parcel have been owned and governed by disparate parties since the 1600s, including private farmers and residents, Harvard University, the Bussey Institute and the City of Boston. Designated as an “urban wild” in the 1970s, and later brought together as a unified parcel, the site became part of the Arnold Arboretum indenture in the mid-1990s and was made passable with the opening of the Blackwell Footpath in 2001, named after John Blackwell, an urban planner who dedicated over 30 years to the preservation of urban wilds throughout Boston.\n\nBussey Brook Meadow is now managed as a living laboratory for urban ecology. It is a site where human interventions including agriculture, landfills, sewer and transportation corridors interact with biological processes and together they are allowed to run their "natural" course. Despite a long history of abuse and neglect, the site has evolved to its current state as a functional urban wetland. The careful observer will be rewarded with discoveries both delightful and disturbing in this “arboretum gone wild”.\n\nThe app is a GPS-enhanced software that senses the participant\'s movement and location in the landscape and plays back pre-recorded sounds at various points through the landscape. Visitors are encouraged to download the app in advance of their visit and wear headphones for optimal listening. Be mindful of bicyclists and other pedestrians on the trail as you wear headphones!\n\nFurther information about the project may be found at:\nhttp://www.terirueb.net/other_order/index.html\n\nCredits:\n\t\tCreated by Teri Rueb\nSound Design:\n\t\tErnst Karel\nAdditional Sound Samples:\n\t\tAdam McFillin\nMobile App Development:\n\t\tTom Stoll (iOS)\n\t\tNima Vakili (Android)\nIllustration:\n\t\tAlison Paul\n\nOther Order was commissioned by the Arnold Arboretum and partially funded by the Harvard metaLab.</string>
+    <string name="help"><b>Enregistrez vos déplacements</b> pour partager vos parcours et contribuer au projet Grimpant :\n\nAppuyez sur le bouton «Commencer le parcours» pour débuter l\'enregistrement de vos déplacements à travers la ville.\n\n\n<b>Plantez une graine</b> pour faire entendre votre voix dans le projet Grimpant :\n\nPendant votre parcours, lorsque vous découvrez une plante ou un arbre qui vous semble remarquable, appuyez sur le bouton «Planter une graine» pour enregistrer votre commentaire audio sur la plante, l\'arbre ou la vigne de votre choix (une minute maximum).\n\nAppuyez sur le bouton «Écouter» pour réécouter votre enregistrement avant de l\'envoyer. Grimpant vous propose ensuite d\'envoyer votre enregistrement.\n\n\n<b>Écouter une graine</b> :\n\nVous pouvez écouter les enregistrements des autres personnes en sélectionnant une graine sur la carte.</string>
+    
+    <string name="dummy_section_text">Section %1d is just a dummy section.</string>
+    <string name="demo_external_activity">Demo External Activity</string>
+    <string name="demo_collection">Demo Collection</string>
+</resources>
