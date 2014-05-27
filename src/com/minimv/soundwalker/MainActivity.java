@@ -499,30 +499,40 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         	}
         }
         public void updateNodes() {
-        	int color;
+        	int color, colorS;
 			int colorI = getResources().getColor(android.R.color.holo_blue_light);
 			int colorA = getResources().getColor(android.R.color.holo_red_light);
         	NodeManager[] node = GPSService.node;
     		for (int i = 0; i < node.length; i++) {
             	LatLng latlon = new LatLng(node[i].getLat(), node[i].getLon());
     			if (node[i].isPlaying()) {
-    				color = colorA;
+    				color = Color.argb(63, Color.red(colorA), Color.green(colorA), Color.blue(colorA));
+    				colorS = Color.argb(127, Color.red(colorA), Color.green(colorA), Color.blue(colorA));
     			}
     			else {
-    				color = colorI;
+    				color = Color.argb(63, Color.red(colorI), Color.green(colorI), Color.blue(colorI));
+    				colorS = Color.argb(127, Color.red(colorI), Color.green(colorI), Color.blue(colorI));
     			}
-        		mapFragment.circleO[i].setCenter(latlon);
-        		mapFragment.circleO[i].setRadius(node[i].getRadO());
-            	if (mapFragment.circleI[i] != null) {
-        			mapFragment.circleO[i].setFillColor(Color.argb(63, Color.red(color), Color.green(color), Color.blue(color)));
-            		mapFragment.circleI[i].setCenter(latlon);
-            		mapFragment.circleI[i].setRadius(node[i].getRadI());
-            		mapFragment.circleI[i].setFillColor(Color.argb(63, Color.red(color), Color.green(color), Color.blue(color)));
+    			if (circleO[i].getCenter().latitude != latlon.latitude || circleO[i].getCenter().longitude != latlon.longitude)
+    				circleO[i].setCenter(latlon);
+    			if (circleO[i].getRadius() != node[i].getRadO())
+    				circleO[i].setRadius(node[i].getRadO());
+            	if (circleI[i] != null) {
+        			if (circleO[i].getFillColor() != color)
+        				circleO[i].setFillColor(color);
+        			if (circleI[i].getCenter().latitude != latlon.latitude || circleI[i].getCenter().longitude != latlon.longitude)
+        				circleI[i].setCenter(latlon);
+        			if (circleI[i].getRadius() != node[i].getRadI())
+        				circleI[i].setRadius(node[i].getRadI());
+        			if (circleI[i].getFillColor() != color)
+        				circleI[i].setFillColor(color);
             	}
     			else {
-        			mapFragment.circleO[i].setFillColor(Color.argb(127, Color.red(color), Color.green(color), Color.blue(color)));
+        			if (circleO[i].getFillColor() != colorS)
+        				circleO[i].setFillColor(colorS);
     			}
-				marker[i].setPosition(latlon);
+            	if (marker[i].getPosition().latitude != latlon.latitude || marker[i].getPosition().longitude != latlon.longitude)
+            		marker[i].setPosition(latlon);
         	}
         }
     }
